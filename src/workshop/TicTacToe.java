@@ -8,7 +8,7 @@ public class TicTacToe {
 	static char[] board = new char[10];
 	static Scanner sc = new Scanner(System.in);
 	static Random r = new Random();
-	static char mark,user,pc;
+	static char mark, user, pc;
 
 	public static void main(String[] args) {
 		boardInitialization();
@@ -46,6 +46,7 @@ public class TicTacToe {
 		int slot = sc.nextInt();
 		if (board[slot] == ' ') {
 			System.out.println("Slot is free ");
+			firstPlay();
 			selectMark();
 			board[slot] = mark;
 		} else
@@ -53,11 +54,11 @@ public class TicTacToe {
 		showBoard(board);
 
 	}
-	
-	//
+
+	// tossing to determine who plays first
 	static void firstPlay() {
-		int turn=r.nextInt(2);
-		if(turn==0)
+		int toss = r.nextInt(2);
+		if (toss == 0)
 			System.out.println("User plays First");
 		else
 			System.out.println("Computer plays First");
