@@ -6,11 +6,13 @@ public class TicTacToe {
 
 	static char[] board = new char[10];
 	static Scanner sc = new Scanner(System.in);
+	static char mark;
 
 	public static void main(String[] args) {
 		boardInitialization();
 		selectMark();
 		showBoard(board);
+		move(board);
 	}
 
 	// board initialization
@@ -22,7 +24,6 @@ public class TicTacToe {
 
 	// selection of x or o
 	public static void selectMark() {
-		char mark;
 		System.out.println("Choose symbol X or O");
 		mark = sc.next().charAt(0);
 
@@ -37,4 +38,13 @@ public class TicTacToe {
 		System.out.println("| " + board[7] + " | " + board[8] + " | " + board[9] + " |");
 	}
 
+	// moving to index
+	static void move(char[] board) {
+		System.out.println("Enter slot 0-9 : ");
+		int slot = sc.nextInt();
+		selectMark();
+		board[slot] = mark;
+		System.out.println(mark + " is at : " + slot);
+
+	}
 }
