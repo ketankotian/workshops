@@ -38,13 +38,17 @@ public class TicTacToe {
 		System.out.println("| " + board[7] + " | " + board[8] + " | " + board[9] + " |");
 	}
 
-	// moving to index
+	// moving to index making sure its free
 	static void move(char[] board) {
 		System.out.println("Enter slot 0-9 : ");
 		int slot = sc.nextInt();
-		selectMark();
-		board[slot] = mark;
-		System.out.println(mark + " is at : " + slot);
+		if (board[slot] == ' ') {
+			System.out.println("Slot is free ");
+			selectMark();
+			board[slot] = mark;
+		} else
+			System.out.println("Slot is occupied please select other ");
+		showBoard(board);
 
 	}
 }
