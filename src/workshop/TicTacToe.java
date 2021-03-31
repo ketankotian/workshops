@@ -42,7 +42,7 @@ public class TicTacToe {
 
 	// moving to index making sure its free
 	static void move(char[] board) {
-		System.out.println("Enter slot 0-9 : ");
+		System.out.println("Enter slot 1-9 : ");
 		int slot = sc.nextInt();
 		if (board[slot] == ' ') {
 			System.out.println("Slot is free ");
