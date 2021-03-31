@@ -1,12 +1,14 @@
 package workshop;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
 
 	static char[] board = new char[10];
 	static Scanner sc = new Scanner(System.in);
-	static char mark;
+	static Random r = new Random();
+	static char mark,user,pc;
 
 	public static void main(String[] args) {
 		boardInitialization();
@@ -50,5 +52,14 @@ public class TicTacToe {
 			System.out.println("Slot is occupied please select other ");
 		showBoard(board);
 
+	}
+	
+	//
+	static void firstPlay() {
+		int turn=r.nextInt(2);
+		if(turn==0)
+			System.out.println("User plays First");
+		else
+			System.out.println("Computer plays First");
 	}
 }
